@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -65,5 +65,55 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+        <section>        	
+        	<div class="jumbotron text-center">
+                <h1 class="display-3">Login</h1>                
+            </div>
+      	</section>
+      	<section>
+      	    <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-2"></div>
+                        <div class="col-md-auto">
+                            <form method="POST" action="{{ route('login') }}">
+                                {{ csrf_field() }}
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email">Correo Electronico</label>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                    
+                                </div>
+                                <div class="form-groupform-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                    <label for="password">Contraseña</label>
+                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        Recordarme
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-dark btn-lg">Ingresar</button>
+                                
+                            </form>
+                        </div>
+                        <div class="col col-lg-2"></div>                        
+                    </div>
+                    <div class="row justify-content-md-center">                    
+                        <div>
+                            <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </div>
+            </div> 
+      	</section>
 @endsection

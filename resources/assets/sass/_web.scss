@@ -1,0 +1,119 @@
+//colors
+$white: white;
+$color_shark_approx: #212529;
+$color_alto_approx: #ddd;
+$black_10: rgba(0,0,0,0.1);
+
+//fonts
+$font_0: Cutive Mono;
+$font_1: monospace;
+
+html, section {
+    background-color: $white;
+}
+
+.container {
+	font-family: $font_0, $font_1;
+	max-width: 50rem;
+}
+.container-footer {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.post {
+	padding-top: 3em;
+}
+.jumbotron {
+	margin: 0;
+	font-family: $font_0, $font_1;
+	background-color: $white;
+	color: $color_shark_approx;
+}
+@media(max-width: 400px) {
+	.display-3 {
+		font-size: 3.0rem;
+	}
+}
+.navbar {
+	font-family: $font_0, $font_1;
+}
+.projects {
+	margin-bottom: 1em;
+}
+#project {
+	padding-top: 3em;
+}
+.m-b-0 {
+	margin-bottom: 0 !important;
+}
+.panel-profile {
+	.panel-heading {
+		height: 150px;
+		background-size: cover;
+	}
+	.panel-title {
+		margin-bottom: 5px;
+	}
+}
+.panel-default {
+	border-color: $color_alto_approx;
+}
+.panel-heading {
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 3px;
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 3px;
+}
+* {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+.panel-body {
+	padding: 15px;
+	border: solid 1px $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+}
+.panel-profile-img {
+	max-width: 100px;
+	margin-top: -70px;
+	margin-bottom: 5px;
+	border: 3px solid $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 100%;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 1px 1px $black_10;
+}
+img {
+	vertical-align: middle;
+	border: 0;
+}
+.panel-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	color: inherit;
+}
+h5 {
+	font-size: 16px;
+	font-weight: 400;
+	margin: 6px 0;
+}
+.m-b {
+	margin-bottom: 15px !important;
+}
+p {
+	margin: 0 0 10px;
+}
+body section .creditos .footer {
+	background-color: $color_shark_approx;
+	color: $white;
+}
+.text-muted a {
+	color: $white;
+}

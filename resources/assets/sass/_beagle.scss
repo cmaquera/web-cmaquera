@@ -1,0 +1,107 @@
+//colors
+$black: #000;
+$color_celeste_approx: #ccc;
+$color_sinbad_approx: #a2d7c7;
+$color_spring_wood_approx: #f8f5f3;
+$color_spring_wood_80_approx: rgba(248,245,243,.8);
+
+.medium-editor-toolbar {
+	background-color: $black;
+	border: none;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50px;
+	li {
+		button {
+			background-color: transparent;
+			border: none;
+			//Instead of the line below you could use @include box-sizing($bs)
+			box-sizing: border-box;
+			color: $color_celeste_approx;
+			height: 40px;
+			min-width: 40px;
+			padding: 5px 12px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: background-color .2s ease-in,color .2s ease-in;
+			&:hover {
+				background-color: $black;
+				color: $color_sinbad_approx;
+			}
+		}
+		.medium-editor-button-active {
+			background-color: $black;
+			color: $color_sinbad_approx;
+		}
+		.medium-editor-button-first {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 50px;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 50px;
+			padding-left: 24px;
+		}
+		.medium-editor-button-last {
+			//Instead of the line below you could use @include border-bottom-right-radius($radius)
+			border-bottom-right-radius: 50px;
+			border-right: none;
+			//Instead of the line below you could use @include border-top-right-radius($radius)
+			border-top-right-radius: 50px;
+			padding-right: 24px;
+		}
+	}
+}
+.medium-editor-toolbar-form {
+	background: $black;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50px;
+	color: $color_celeste_approx;
+	overflow: hidden;
+	.medium-editor-toolbar-input {
+		background: $black;
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		color: $color_celeste_approx;
+		height: 40px;
+		padding-left: 16px;
+		width: 220px;
+		&:-moz-placeholder {
+			color: $color_spring_wood_approx;
+			color: $color_spring_wood_80_approx;
+		}
+		&:-ms-input-placeholder {
+			color: $color_spring_wood_approx;
+			color: $color_spring_wood_80_approx;
+		}
+	}
+	.medium-editor-toolbar-input::-webkit-input-placeholder {
+		color: $color_spring_wood_approx;
+		color: $color_spring_wood_80_approx;
+	}
+	.medium-editor-toolbar-input::-moz-placeholder {
+		color: $color_spring_wood_approx;
+		color: $color_spring_wood_80_approx;
+	}
+	a {
+		color: $color_celeste_approx;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateY(2px);
+	}
+	.medium-editor-toolbar-close {
+		margin-right: 16px;
+	}
+}
+.medium-editor-toolbar-anchor-preview {
+	background: $black;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50px;
+	padding: 5px 12px;
+}
+.medium-toolbar-arrow-under:after {
+	border-color: $black transparent transparent;
+	top: 40px;
+}
+.medium-toolbar-arrow-over:before {
+	border-color: transparent transparent $black;
+}
+.medium-editor-anchor-preview a {
+	color: $color_celeste_approx;
+	text-decoration: none;
+}

@@ -1,0 +1,66 @@
+//colors
+$color_gallery_approx: #eee;
+$black: black;
+$white: white;
+$color_tuna_approx: #343a40;
+
+//fonts
+$font_0: Cutive Mono;
+$font_1: monospace;
+
+body {
+	padding-top: 3.5rem;
+}
+h1 {
+	padding-bottom: 9px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid $color_gallery_approx;
+}
+.sidebar {
+	position: fixed;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 20px 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-right: 1px solid $color_gallery_approx;
+	font-family: $font_0, $font_1;
+	a {
+		color: $black;
+	}
+	.nav {
+		margin-bottom: 20px;
+	}
+	.nav-item {
+		width: 100%;
+		+ .nav-item {
+			margin-left: 0;
+		}
+	}
+	.nav-link {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0;
+	}
+}
+.nav-pills {
+	.nav-link.active {
+		color: $white;
+		background-color: $color_tuna_approx;
+	}
+	.show > .nav-link {
+		color: $white;
+		background-color: $color_tuna_approx;
+	}
+}
+.placeholders {
+	padding-bottom: 3rem;
+}
+.editable {
+	font-family: $font_0, $font_1;
+}
+.placeholder img {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}

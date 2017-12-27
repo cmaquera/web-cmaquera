@@ -5,5 +5,17 @@
 // Variables
 @import "variables";
 
+//SweetAlert2
+@import "~sweetalert2/src/sweetalert2";
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Web
+@import "web";
+
+// Dashboard
+@import "dashboard";
+
+// Beagle
+@import "beagle";
