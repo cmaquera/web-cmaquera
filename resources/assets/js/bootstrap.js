@@ -11,11 +11,15 @@ try {
     window.swal = require('sweetalert2');
     
     window.$ = window.jQuery = require('jquery');
-    require("jquery-validation");
+    require('jquery-validation');
     
     window.Popper = require('popper.js');
 
     require('bootstrap');
+    
+    window.MediumEditor = require('medium-editor');
+    //require('blueimp-file-upload-node');
+    //require('medium-editor-insert-plugin');
 } catch (e) {}
 
 /**

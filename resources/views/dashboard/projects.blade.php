@@ -140,6 +140,7 @@
     $(".update-cancel").click(function(){ $('#update-projects')[0].reset(); $('.img_preview').removeAttr('src'); });
     
     $("#update-projects").validate({
+      ignore: [],
       rules: {
         name: { required: true },
         description: { required: true },
@@ -182,7 +183,7 @@
         $("#update-projects").attr("action", "/dashboard/projects/"+id);
         $("input[name='id']").val(data['id']);
         $("input[name='name']").val(data['name']);
-        $("input[name='description']").val(data['description']);
+        $("textarea[name='description']").val(data['description']);
         $("input[name='url_project']").val(data['url_project']);
         //$("input[name='url_screenshot']").val(data['url_screenshot']);
         $('.img_preview').attr('src', data['url_screenshot']);

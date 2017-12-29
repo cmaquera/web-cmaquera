@@ -57,8 +57,6 @@
                         		</div>\
                         	</div>\
                 ');
-                
-                console.log(i + "  -  " + val.name);
             });
         });
     });

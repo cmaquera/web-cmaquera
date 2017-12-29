@@ -8,6 +8,11 @@
 //SweetAlert2
 @import "~sweetalert2/src/sweetalert2";
 
+//Medium Editor
+@import "~medium-editor/src/sass/medium-editor";
+@import "~medium-editor/src/sass/themes/beagle";
+@import "~medium-editor-insert-plugin/src/sass/medium-editor-insert-plugin";
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
@@ -18,4 +23,4 @@
 @import "dashboard";
 
 // Beagle
-@import "beagle";
+//@import "beagle";

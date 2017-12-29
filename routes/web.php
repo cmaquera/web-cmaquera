@@ -31,9 +31,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Subcribers
 Route::resource('/dashboard/subscribers', 'SubscriberController');
-Route::get('/subscribers/data', 'SubscriberController@getSubscribers')->name('api.subscribers');
+Route::get('/subscribers/data', 'SubscriberController@getSubscribers')->name('data.subscribers');
 
+// Projects
 Route::resource('/dashboard/projects', 'ProjectController');
-Route::get('/projects/data', 'ProjectController@getProjects')->name('api.projects');
+Route::get('/projects/data', 'ProjectController@getProjects')->name('data.projects');
 
+// Posts
+Route::resource('/dashboard/posts', 'PostController');
+Route::get('/posts/data', 'PostController@getPosts')->name('data.posts');
+
+// Tags
+Route::resource('/dashboard/tags', 'TagController');
+Route::get('/tags/data', 'TagController@getTags')->name('data.tags');

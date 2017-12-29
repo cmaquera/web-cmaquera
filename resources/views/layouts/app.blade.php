@@ -16,9 +16,6 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('css/app.css', true)}}"/>
-        <link rel="stylesheet" href="{{asset('css/dashboard.css', true)}}" >
-        <link rel="stylesheet" href="{{asset('css/beagle.min.css', true)}}"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
         <!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">-->
     </head>
     <body>
@@ -128,39 +125,7 @@
         
         <!-- Scripts -->
         <script type="text/javascript" src="{{asset('js/app.js', true)}}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-        <script>
-            var editor = new MediumEditor('.editable', {
-                toolbar: {
-                    buttons: [
-                        {
-                            name: 'h3',
-                            action: 'append-h4',
-                            aria: 'header type 3',
-                            tagNames: ['h4'],
-                            contentDefault: '<b>H3</b>',
-                            classList: ['custom-class-h3'],
-                            attrs: {
-                                'data-custom-attr': 'attr-value-h2'
-                            }
-                        },
-                        'bold',
-                        'italic',
-                        'underline',
-                        'anchor',
-                        'quote',
-                        'pre',
-                        'orderedlist',
-                        'unorderedlist',
-                        'justifyLeft',
-                        'justifyCenter',
-                        'justifyRight',
-                        'justifyFull'
-                    ]
-                }
-            });
-        </script>
         
         @yield('script')
     </body>
