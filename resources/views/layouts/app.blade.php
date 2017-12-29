@@ -69,10 +69,10 @@
                   @else
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" href="/panel">Panel</a>
+                          <a class="nav-link" href="{{ route('panel.index') }}">Panel</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="/">Ver web</a>
+                          <a class="nav-link" href="{{ route('index') }}">Ver web</a>
                         </li>
                           
                       </ul>             
@@ -97,20 +97,20 @@
                           <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
                               <div class="col-md-auto">
-                      			    <img src="images/logo-cm.png" class="img-fluid" alt="cmaquera perfil image">
+                      			    <img src="{{ asset('images/logo-cm.png') }}" class="img-fluid" alt="cmaquera perfil image">
                       			  </div>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link {{ Request::is('dashboardPanel') ? 'active' : '' }}" href="/dashboardPanel"><i class="icon ion-android-desktop"></i> Panel</a>
+                              <a class="nav-link {{ Request::is('dashboard/panel') ? 'active' : '' }}" href="{{ route('panel.index') }}"><i class="icon ion-android-desktop"></i> Panel</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link {{ Request::is('postsPanel') ? 'active' : '' }}" href="/postsPanel"><i class="icon ion-android-list"></i> Posts</a>
+                              <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="{{ route('posts.index') }}"><i class="icon ion-android-list"></i> Posts</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link {{ Request::is('projectsPanel') ? 'active' : '' }}" href="/projectsPanel"><i class="icon ion-android-folder"></i> Proyectos</a>
+                              <a class="nav-link {{ Request::is('dashboard/projects') ? 'active' : '' }}" href="{{ route('projects.index') }}"><i class="icon ion-android-folder"></i> Proyectos</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link {{ Request::is('subscribersPanel') ? 'active' : '' }}" href="/subscribersPanel"><i class="icon ion-android-contacts"></i> Suscriptores</a>
+                              <a class="nav-link {{ Request::is('dashboard/subscribers') ? 'active' : '' }}" href="{{ route('subscribers.index') }}"><i class="icon ion-android-contacts"></i> Suscriptores</a>
                             </li>
                           </ul>
                         </nav>

@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Subscriber;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Datatables;
 
-class SubscriberController extends Controller
+class PanelController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',  ['except' => ['store']]);
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +18,7 @@ class SubscriberController extends Controller
     public function index()
     {
         //
-        return view('dashboard/subscribers');
+        return view('dashboard/panel');
     }
 
     /**
@@ -30,7 +28,7 @@ class SubscriberController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -41,17 +39,7 @@ class SubscriberController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            'name' => $request['name'],
-            'email' => $request['email']
-        ];
-        
-        $subscriber = Subscriber::create($data);
-        
-        return response()->json([
-            'name' => $data['name'],
-            'message' => 'Gracias por suscribirte!!!'
-        ]);
+        //
     }
 
     /**
@@ -97,14 +85,5 @@ class SubscriberController extends Controller
     public function destroy($id)
     {
         //
-    }
-    
-    public function getSubscribers(){
-        return Datatables::of(Subscriber::select(['id','name','email']))->make(true);
-        //return Datatables::queryBuilder(DB::table('users'))->make(true);
-        //return datatables()->eloquent($this->query())->make(true);
-        //$subscribers = Subscriber::select(['id','name', 'email']);
- 
-        //return Datatables::eloquent(Subscriber::select(['id','name', 'email']))->make(true);
     }
 }

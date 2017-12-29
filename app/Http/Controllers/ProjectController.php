@@ -8,6 +8,10 @@ use Yajra\Datatables\Datatables;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',  ['except' => ['getProjects']]);
+    }
     /**
      * Display a listing of the resource.
      *

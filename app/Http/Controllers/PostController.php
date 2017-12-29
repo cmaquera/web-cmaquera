@@ -8,6 +8,11 @@ use Yajra\Datatables\Datatables;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',  ['except' => ['show', 'getPosts', 'showPost']]);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -68,7 +73,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post =  Post::findOrFail($id);
+        return $post;
     }
 
     /**
@@ -136,12 +142,16 @@ class PostController extends Controller
     }
     
     public function getPosts(){
-        $post = Post::select(['id', 'title', 'content', 'url', 'picture', 'published', 'shared']);
+        $post = Post::select(['id', 'title', 'content', 'url', 'picture', 'published', 'shared', 'created_at']);
         
         return Datatables::of($post)
             ->addColumn('action', function($post) {
                 return '<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#postEditForm" onclick="getPost(' . $post->id . ')"><i class="icon ion-android-refresh"></i> Modificar</button>
                         <button type="button" class="btn btn-outline-danger" onclick="deletePost(' . $post->id . ')"><i class="icon ion-android-close"></i> Eliminar</button>';
             })->make(true);
+    }
+        
+    public function showPost($id){
+        return view('/post');
     }
 }
