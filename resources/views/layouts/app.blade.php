@@ -16,6 +16,12 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('css/app.css', true)}}"/>
+        <link rel="stylesheet" href="{{asset('css/typeahead.css', true)}}"/>
+        <style type="text/css">
+          .typeahead.dropdown-menu, span.twitter-typeahead .tt-menu {
+              min-width: 100%;
+          }
+        </style>
         <!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">-->
     </head>
     <body>
@@ -62,10 +68,13 @@
                             <a class="nav-link" href="/projects">Proyectos</a>
                           </li>
                         </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-                        </form>
+                        <div>
+                          <form class="form-inline my-2 my-lg-0">
+                          <input class="form-control mr-sm-2 typeahead twitter-typeahead" type="search" placeholder="Buscar" aria-label="Search">
+                            <!--<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>-->
+                          </form>
+                        </div>
+                        
                   @else
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
@@ -126,7 +135,7 @@
         <!-- Scripts -->
         <script type="text/javascript" src="{{asset('js/app.js', true)}}"></script>
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
         @yield('script')
     </body>
 </html>

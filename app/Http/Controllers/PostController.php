@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',  ['except' => ['show', 'getPosts', 'showPost']]);
+        $this->middleware('auth',  ['except' => ['show', 'getPosts', 'showPost', 'autocomplete', 'posts_users']]);
     }
     
     /**
@@ -153,5 +153,19 @@ class PostController extends Controller
         
     public function showPost($id){
         return view('/post');
+    }
+    
+    public function autocomplete(Request $request)
+    {
+        $data = Post::select(['title', 'url', 'content', 'created_at'])->where("title","LIKE","%{$request->input('query')}%")->with('tags')->get();
+        return Datatables::of($data)->make(true);
+        //return response()->json($data);
+    }
+    
+    public function posts_users(){
+        $query = Post::findOrFail(5)->with('tags', 'user');
+
+        return Datatables::of($query)->make(true);
+    
     }
 }

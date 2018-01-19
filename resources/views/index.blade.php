@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+        
+        <section>
+            <!--<input class="typeahead form-control" style="margin:0px auto;width:300px;" type="text">-->
+        </section>
         <section>        	
         	<div class="jumbotron text-center">
                 <h1 class="display-3">CMaquera</h1>
@@ -58,4 +62,43 @@
       	    </div>
       	</section>
 
+
+@endsection
+
+@section('script')
+<script type="text/javascript">
+    var path = "{{ route('search.posts') }}";
+    $('input.typeahead').typeahead({
+        display: 'posts',
+        minLength: 3, 
+        source: function (query, process) {
+            return $.get(path, { query: query }, function (data) {
+                return process(data['data']);
+            });
+        },
+        displayText: function (item) {
+        return item.title ;
+        },
+        highlighter: function(item) {
+            var query = this.query;
+            if(!query) {
+                return '<div> ' + item + '</div>';
+            }
+    
+            var reEscQuery = query.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+            var reQuery = new RegExp('(' + reEscQuery + ')', "gi");
+    
+            var jElem = $('<div></div>').html(item);
+            var textNodes = $(jElem.find('*')).add(jElem).contents().filter(function () { return this.nodeType === 3; });
+            textNodes.replaceWith(function() {
+                return $(this).text().replace(reQuery, '<strong>$1</strong>')
+            });
+    
+            return jElem.html();
+        },
+        afterSelect: function(item){
+            console.log(item);
+        }
+    });
+</script>
 @endsection

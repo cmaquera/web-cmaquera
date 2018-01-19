@@ -45,8 +45,10 @@ Route::get('/projects/data', 'ProjectController@getProjects')->name('data.projec
 // Posts
 Route::resource('/dashboard/posts', 'PostController');
 Route::get('/posts/data', 'PostController@getPosts')->name('data.posts');
+Route::get('/posts/search', 'PostController@autocomplete')->name('search.posts');
 Route::get('/posts/{post}', 'PostController@showPost');
+Route::get('/p', 'PostController@posts_users');
 
 // Tags
-Route::resource('/dashboard/tags', 'TagController')->middleware('auth');
-Route::get('/tags/data', 'TagController@getTags')->name('data.tags')->middleware('auth');
+Route::resource('/dashboard/tags', 'TagController');
+Route::get('/tags/data', 'TagController@getTags')->name('data.tags');
